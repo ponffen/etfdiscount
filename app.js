@@ -95,10 +95,16 @@ app.get('/', function (req, res) {
     .then(function(pages) {
         pages.forEach(function(page) {
             courseData = filterChapters(page);
-            pageContent += courseData.coursesId+ ' ' +courseData.zheyijia +' ' +courseData.name +  "<br />";
+            pageContent += courseData.coursesId+ 
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +courseData.zheyijia +
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +courseData.name +  "<br />";
         })
     }).then(function(){
-        res.send(pageContent);  
+        res.send('代码'+
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+            '折溢价'+
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+            '名称'+  '<br />'+pageContent);  
     }); 
 });
 
